@@ -23,13 +23,11 @@ class App extends Component {
       this.setState({ contacts });
     }
   }
-
   componentDidUpdate(prevProps, prevState) {
     if (prevState.contacts.length !== this.state.contacts.length) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
-
   handleAddContactClick = obj => {
     const newObj = {
       id: nanoid(),
